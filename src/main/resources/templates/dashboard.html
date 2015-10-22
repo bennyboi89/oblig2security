@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Admin panel for oblig2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Hei</h1>
+
+	<h2>Admin Siden!</h2>
+
+	<form th:action="@{/admin/dashboard/insert}" method="post">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		<div><label> Navn : <input type="text" name="name"/> </label></div>
+
+		<div><input type="submit" value="Legge til"/></div>
+	</form>
+
+
+
+	<form th:action="@{/logout}" method="post">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+		<button type="submit">Logg ut</button>
+	</form>
+
+
+</body>
+</html>
